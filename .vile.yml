@@ -1,0 +1,50 @@
+vile:
+  ignore:
+    - .test
+    - ruby/.bundle/**
+    - .ackrc
+    - bin
+    - .bundle
+    - circle.yml
+    - coverage
+    - public
+    - db
+    - vendor
+    - tmp
+    - .git
+    - node_modules
+    - .log
+    - .keep
+    - tags
+    - .brakeman.yml
+    - .ctags
+    - .editorconfig
+    - .env
+    - .eslintignore
+    - .eslintrc
+    - .gitignore
+    - .npmrc
+    - .reek
+    - .rspec
+    - .rubocop.yml
+    - .ruby-version
+    - .vile.yml
+    - LICENSE
+
+rubycritic:
+  config:
+    method_count: 10
+    complexity: 80
+    churn: 20
+    rating: "A"
+
+rubcocop:
+  config: .rubocop.yml
+
+bundler-audit:
+  config:
+    update_db: true
+
+coverage:
+  config:
+    path: coverage/lcov.info

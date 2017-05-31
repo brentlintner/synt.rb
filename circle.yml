@@ -1,0 +1,20 @@
+machine:
+  ruby:
+    version: 2.4.1
+  node:
+    version: 7
+
+checkout:
+  post:
+    - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+    - git fetch origin $CIRCLE_BRANCH
+
+dependencies:
+  override:
+    - ./bin/dev-setup
+
+test:
+  override:
+    - ./bin/test
+  post:
+    - bundle exec npm run vile
